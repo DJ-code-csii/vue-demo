@@ -1,0 +1,16 @@
+<template>
+  <div>
+    <input ref="myinput" type="text" :value="value" @input="doit()" />
+  </div>
+</template>
+<script>
+export default {
+    // 用prop拿父亲的value值
+  props: ["value"],
+  methods: {
+    doit() {
+      this.$emit("input", this.$refs.myinput.value);
+    },
+  },
+};
+</script>
