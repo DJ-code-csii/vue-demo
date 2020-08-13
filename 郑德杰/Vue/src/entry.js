@@ -12,6 +12,9 @@ import './directives/index';
 // 引入公共组件
 import './components/index';
 
+// 公共样式
+import '@yelloxing/normalize.css';
+
 // import image2d from './image2d';不需要这个
 // image2D().afterTo   image方法
 
