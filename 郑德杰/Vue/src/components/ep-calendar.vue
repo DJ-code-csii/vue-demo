@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     doit(year, month, day) {
-      // debugger
       this.$emit("input", `${year}${month}${day}`);
     },
     // 选择天视图
@@ -114,7 +113,6 @@ export default {
 
       // 点击天按钮
       $$(".click", this.$refs.mycalendar).bind("click", (event) => {
-        // debugger;
         let day = event.target.getAttribute("val");
         if (day.length <= 1) {
           day = "0" + event.target.getAttribute("val");
