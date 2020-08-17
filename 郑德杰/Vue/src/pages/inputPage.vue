@@ -23,7 +23,13 @@
     <div class="btn-list">
       <input type="button" @click="doReset()" value="重置" class="btn btn-reset" />
       <input type="submit"  value="提交" class="btn btn-submit" />
+      <input type="button" @click="doChange()" value="改变数据" class="btn btn-change"/>
     </div>
+    <div class="line">
+      <label>{{params.datalist}}</label>
+      <ep-line v-model='params.datalist'></ep-line>
+    </div>
+    
   </form>
 </template>
 <script>
@@ -36,6 +42,7 @@ export default {
         birthDate: "19971213",
         nation: "1",
         isFTA: false,
+        datalist:[820, 932, 901, 934, 1290, 1330, 1320]
       },
       selectList: {
         nations: {
@@ -51,6 +58,18 @@ export default {
     };
   },
   methods: {
+    doChange(){
+      // debugger
+      this.params.datalist=[
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0),
+      +(Math.random()*1500).toFixed(0)
+    ];
+    },
     // 表单提交方法
     doSubmit() {
       this.$router.push({
@@ -75,7 +94,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 form {
-  width: 295px;
+  width: 800px;
   padding: 10px 0;
   &.ep-invalid div.btn-list > .btn.btn-submit {
     background-color: red;
@@ -101,6 +120,9 @@ form {
         }
         &.btn-reset {
           background-color: rgb(214, 210, 204);
+        }
+        &.btn-change {
+          background-color: rgb(218, 39, 77);
         }
       }
     }

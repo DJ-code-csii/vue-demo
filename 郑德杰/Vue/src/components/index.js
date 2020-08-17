@@ -8,3 +8,5 @@ import epInput from './ep-input.vue'; Vue.component('epInput', epInput);
 import epRadio from './ep-radio.vue'; Vue.component('epRadio', epRadio);
 // 下拉框
 import epSelect from './ep-select.vue'; Vue.component('epSelect', epSelect);
+// 图形
+import epLine from './ep-line.vue'; Vue.component('epLine', epLine);
