@@ -22,11 +22,9 @@ export default {
         painter.stroke()
     },
     viewshow() {
-      // debugger
       let leftline = ["0", "300", "600", "900", "1200", "1500"];
       let rightline = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sta", "Sun"];
       let datalist = this.value;
-      //   let datalist = [820, 932, 901, 934, 1290, 1330, 1320];
 
        let painter=$$("canvas")
         .attr({
@@ -84,8 +82,8 @@ export default {
         // 设置张弛系数
         lineFun.setT(-1);
         // 设置点的位置
-        lineFun.setP([[100,500-datalist[0]/3],[200,500-datalist[1]/3],
-        [300,500-datalist[2]/3],[400,500-datalist[3]/3],[500,500-datalist[4]/3],[600,500-datalist[5]/3],[700,500-datalist[6]/3]])
+        lineFun.setP([[100,550-datalist[0]/3],[200,550-datalist[1]/3],
+        [300,550-datalist[2]/3],[400,550-datalist[3]/3],[500,550-datalist[4]/3],[600,550-datalist[5]/3],[700,550-datalist[6]/3]])
          painter.config({
           strokeStyle: '#99CCFF',
           lineWidth: 5,
@@ -93,7 +91,14 @@ export default {
 
         this.lineImage(painter,100,700,lineFun)
     },
+    
   },
+  watch:{
+    value:'viewshow',immediate:true,
+  },
+  mounted:function(){
+    this.viewshow();
+  }
 };
 </script>
 
